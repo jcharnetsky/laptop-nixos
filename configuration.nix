@@ -122,19 +122,24 @@
     defaultEditor = true;
   };
 
+  # Aliases
+  programs.bash.shellAliases = {
+    vim = "nvim";
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     gnomeExtensions.paperwm
-     wget
-     prusa-slicer
-     kdePackages.kdeconnect-kde
-     qmk
-     git
-     telegram-desktop
+    gnomeExtensions.paperwm
+    wget
+    prusa-slicer
+    kdePackages.kdeconnect-kde
+    qmk
+    git
+    telegram-desktop
   ];
 
   hardware.keyboard.qmk.enable = true;
